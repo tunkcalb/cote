@@ -1,0 +1,22 @@
+num_dict = {
+    "zero": "0",
+    "one": "1",
+    "two": "2",
+    "three": "3",
+    "four": "4",
+    "five": "5",
+    "six": "6",
+    "seven": "7",
+    "eight": "8",
+    "nine": "9",
+}
+number_list = list(num_dict.keys())
+
+
+def solution(s):
+    for number_idx in number_list:
+        if number_idx in s:
+            s = s.replace(number_idx, num_dict[number_idx])
+    answer = int(s)
+
+    return answer
