@@ -1,5 +1,6 @@
 n = int(input())
 build_list = []
+
 for i in range(n):
     x,y = [int(num) for num in input().split()]
     build_list.append((x,y))
