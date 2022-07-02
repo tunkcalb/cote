@@ -1,4 +1,6 @@
 import sys
+
+
 N = int(sys.stdin.readline().rstrip())
 if N <= 1000:
     cost = [[] for i in range(N)]
@@ -14,6 +16,6 @@ if N <= 1000:
                     cost[i].append(rgb[j] + min(cost[i-1][1],cost[i-1][2]))
                 elif j == 1:
                     cost[i].append(rgb[j] + min(cost[i-1][0],cost[i-1][2]))
-                elif j == 2:
+                else j == 2:
                     cost[i].append(rgb[j] + min(cost[i-1][0],cost[i-1][1]))
 print(min(cost[N-1]))
