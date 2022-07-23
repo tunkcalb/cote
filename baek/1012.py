@@ -34,14 +34,3 @@ for _ in range(num):
     answer.append(c_list)
 for i in range(len(answer)):
     print(len(answer[i]))
-
-"""
-[(1, 2), (2, 2)], [(3, 3), (3, 4)]
-(2, 3)
-[(1, 2), (2, 2), (2, 3)], [(3, 3), (3, 4)]
-
-1 1
-4 1
-2 1
-3 1
-"""
