@@ -23,13 +23,13 @@ for i in range(m):
 
 p1_list = p_list(p1)
 p2_list = p_list(p2)
-p3 = set(p1_list).intersection(set(p2_list))
-if p3 == set():
-    print(-1)
+
+for p in p1_list:
+    if p in set(p2_list):
+        p3 = p
+        break
 else:
-    if len(p3) > 1:
-        p3 = list(p3)[0]
-        print(p1_list.index(p3) + p2_list.index(p3))
-    else:
-        p3=p3.pop()
-        print(p1_list.index(p3) + p2_list.index(p3))
+    print(-1)
+    exit()
+
+print(p1_list.index(p3) + p2_list.index(p3))
