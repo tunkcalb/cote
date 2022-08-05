@@ -1,4 +1,3 @@
-from tkinter.messagebox import YES
 import sys
 from collections import deque
 
@@ -22,10 +21,6 @@ def bfs(s_x, s_y, d_x, d_y):
                 queue.append([nx, ny, count+1])
                 board[nx][ny] = 1
 
-
-
-
-
 dx = [-2, -2, -1, -1, 1, 1, 2, 2]
 dy = [-1, 1, -2, 2, -2, 2, -1, 1]
 N = int(input().rstrip())
@@ -39,4 +34,3 @@ for i in range(N):
         print(0)
         continue
     bfs(s_x, s_y, d_x, d_y)
-    
