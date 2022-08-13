@@ -1,6 +1,7 @@
 import sys
 from collections import deque
 
+
 def dfs(x, y, current):
     global Max
     if Max < current:
@@ -14,9 +15,10 @@ def dfs(x, y, current):
             dfs(nx, ny, current + 1)
             visited.remove(board[nx][ny])
 
+
 def bfs():
     Max = 1
-    queue = set([(0,0,board[0][0])])
+    queue = set([(0, 0, board[0][0])])
 
     while queue:
         x, y, visited = queue.pop()
@@ -29,6 +31,7 @@ def bfs():
                 Max = max(Max, len(next_visited))
     return Max
 
+
 input = sys.stdin.readline
 
 R, C = map(int, input().rstrip().split())
@@ -39,6 +42,6 @@ Max = 1
 for _ in range(R):
     board.append(input().rstrip())
 #visited = set()
-#visited.add(board[0][0])
+# visited.add(board[0][0])
 visited = []
 print(bfs())

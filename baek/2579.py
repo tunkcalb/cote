@@ -1,7 +1,7 @@
 import sys
 
 
-def solve(stair,n):
+def solve(stair, n):
     dp = []
     dp.append(stair[0])
     dp.append(max(dp[0] + stair[1], stair[1]))

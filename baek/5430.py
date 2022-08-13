@@ -11,7 +11,7 @@ for i in range(N):
     length = int(input().rstrip())
     li = input().rstrip()
     line = deque(li[1:-1].split(","))
-    function= function.replace("RR", "")
+    function = function.replace("RR", "")
     R = 1
     if length == 0:
         line = deque()
@@ -28,7 +28,7 @@ for i in range(N):
                     line.popleft()
                 else:
                     line.pop()
-    
+
     if stop == True:
         continue
     else:

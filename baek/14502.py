@@ -3,7 +3,7 @@ from itertools import combinations, product
 
 
 def wall_construct(empty, wall_num, board):
-    for wall_comb in combinations(empty,wall_num):
+    for wall_comb in combinations(empty, wall_num):
         for x_w, y_w in wall_comb:
             board[(x_w, y_w)] = 1
         virus(board)
@@ -13,10 +13,12 @@ def wall_construct(empty, wall_num, board):
             if board[(row, col)] == 3:
                 board[(row, col)] = 0
 
+
 def virus(board_wall):
-    
-    #바이러스 위치
-    virus = [(n,m) for n in range(N) for m in range(M) if board_wall[(n,m)] == 2]
+
+    # 바이러스 위치
+    virus = [(n, m) for n in range(N)
+             for m in range(M) if board_wall[(n, m)] == 2]
 
     while virus:
         x, y = virus.pop()
@@ -28,6 +30,7 @@ def virus(board_wall):
                 virus.append((nx, ny))
     safezone(board_wall)
 
+
 def safezone(board_wall):
     global answer
     safezone_count = 0
@@ -35,7 +38,7 @@ def safezone(board_wall):
     for key in board_wall:
         if board_wall[key] == 0:
             safezone_count += 1
-        answer = max(answer , safezone_count)
+        answer = max(answer, safezone_count)
 
 
 board = {}
@@ -44,11 +47,11 @@ N, M = map(int, sys.stdin.readline().rstrip().split())
 for row in range(N):
     line = sys.stdin.readline().rstrip().split()
     for col in range(M):
-        pos = (row,col)
+        pos = (row, col)
         board[pos] = int(line[col])
 
 empty = [(n, m) for n in range(N) for m in range(M) if board[(n, m)] == 0]
-direction = [(-1,0) , (1, 0), (0, -1), (0, 1)]
+direction = [(-1, 0), (1, 0), (0, -1), (0, 1)]
 answer = 0
 wall_num = 3
 

@@ -1,5 +1,6 @@
 import sys
 
+
 def p_list(p):
     p_list2 = []
     i = p
@@ -9,6 +10,7 @@ def p_list(p):
         p_list2.append(i)
         i = family.get(i)
     return p_list2
+
 
 input = sys.stdin.readline
 

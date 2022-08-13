@@ -3,12 +3,13 @@ from collections import deque
 
 input = sys.stdin.readline
 
+
 def bfs(s_x, s_y, d_x, d_y):
     count = 0
     queue = deque()
     queue.append([s_x, s_y, count])
     board[s_x][s_y] = 1
-    
+
     while queue:
         x, y, count = queue.popleft()
         if x == d_x and y == d_y:
@@ -20,6 +21,7 @@ def bfs(s_x, s_y, d_x, d_y):
             if 0 <= nx < L and 0 <= ny < L and board[nx][ny] == 0:
                 queue.append([nx, ny, count+1])
                 board[nx][ny] = 1
+
 
 dx = [-2, -2, -1, -1, 1, 1, 2, 2]
 dy = [-1, 1, -2, 2, -2, 2, -1, 1]
