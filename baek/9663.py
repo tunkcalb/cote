@@ -2,6 +2,7 @@ import sys
 
 input = sys.stdin.readline
 
+
 def check(x):
     for i in range(x):
         if board[x] == board[i] or abs(board[x] - board[i]) == x - i:
@@ -18,6 +19,7 @@ def queen(x, n):
             board[x] = i
             if check(x):
                 queen(x+1, n)
+
 
 count = 0
 n = int(input().rstrip())

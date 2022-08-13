@@ -2,9 +2,10 @@ def find_house(n, board):
     house = []
     for col in range(n):
         for row in range(n):
-            if board[(row,col)] >0 :
-                house.append((row,col))
+            if board[(row, col)] > 0:
+                house.append((row, col))
     return house
+
 
 def generate_candidates(n, board):
     house = find_house(n, board)
@@ -26,13 +27,13 @@ def generate_candidates(n, board):
 
             if len(connected) == 0:
                 break
-            
+
             for c in connected:
                 house.remove(c)
             candidates.extend(connected)
 
         village.append(candidates)
-    
+
     def key(elem):
         return len(elem)
 
